@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.8.0",
     "@reduxjs/toolkit": "^2.2.6",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
     "react-redux": "^9.1.2",
-    "sass": "^1.77.6"
+    "remixicon": "^4.3.0",
+    "sass": "^1.77.6",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

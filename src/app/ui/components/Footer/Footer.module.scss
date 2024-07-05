@@ -1,0 +1,30 @@
+@import '../../../ui/theme/colors.module.scss';
+
+.footer_layout_container {
+  @include centered-flex;
+  justify-content: space-between;
+  background-color: #0A0F16;
+  padding: 24px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  >.follow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    >.social_medias_container {
+      @include centered-flex;
+      gap: 16px;
+
+      >.item {
+        font-size: 32px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

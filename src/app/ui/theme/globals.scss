@@ -1,7 +1,7 @@
-@import './colors.scss';
+@import './colors.module.scss';
 @import './mixins.scss';
-@import './variables.scss';
-@import './fonts.scss';
+@import './variables.module.scss';
+@import './fonts.module.scss';
 
 :root {
   --max-width: 1100px;
