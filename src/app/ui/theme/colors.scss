@@ -1,0 +1,15 @@
+@import 'mixins';
+@import './variables.scss';
+
+$primary: #0A0F16;
+$secondary: #34A39B;
+$tertiary: #336A7F;
+$error: #A00000;
+$white: #ffffff;
+
+$fontColor: $white;
+$bgBody: $primary;
+
+@include key-value-color('color', 'color');
+@include key-value-color('bg', 'background-color');
+@include key-value-color('border', 'border-color');
