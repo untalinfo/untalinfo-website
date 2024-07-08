@@ -1,0 +1,75 @@
+@import '../../../ui/theme/colors.module.scss';
+
+.header_layout_container {
+  @include centered-flex;
+  justify-content: space-between;
+  padding: 24px;
+
+  .logo_icon {
+      width: 40px;
+      height: auto;
+      cursor: pointer;
+  
+      @include medium-view {
+        margin-left: 24px;
+      }
+    }
+  
+    >.hamburguer_menu {
+      display: block;
+      cursor: pointer;
+  
+      @include medium-view {
+        display: none;
+      }
+    }
+  
+    >.menu {
+      display: none;
+      height: 96px;
+      /* Glass effect */
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+  
+      >.menu_link {
+        @extend .color-white;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+  
+        &:hover,
+        &.current-path {
+          font-weight: 800 !important;
+          border-bottom-color: $white;
+          border-style: solid;
+          border-width: 0 0 2px 0;
+        }
+      }
+  
+      @include medium-view {
+        @include centered-flex;
+        justify-content: flex-end;
+        padding: 0 80px;
+        column-gap: 80px;
+  
+        >.menu_link {
+          @include centered-flex;
+          column-gap: 12px;
+          text-decoration: none;
+        }
+      }
+    }
+  
+    @include medium-view {
+      padding: 0;
+    }
+  
+    @include large-view {
+      padding: 44px  0 0 24px;
+  
+      .logo_icon {
+        margin-left: 44px;
+      }
+    }
+}

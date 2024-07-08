@@ -1,0 +1,42 @@
+@import '../ui/theme/colors.module.scss';
+
+.container_contact_page {
+  @include centered-flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 24px;
+  width: 100%;
+  max-width: 1110px;
+  height: 100%;
+  margin: 70px auto;
+
+  >.container_from {
+    @include centered-flex;
+    @extend .color-primary;
+    flex-direction: column;
+    gap: 16px;
+    width: 80%;
+
+    >.submit_button {
+      background: rgb(51, 106, 127);
+      background: linear-gradient(90deg, rgba(51, 106, 127, 1) 0%, rgba(52, 163, 155, 1) 100%);
+      @extend .color-white;
+      @include centered-flex;
+      align-self: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 40px;
+      padding: 10px 40px;
+      transition: all 0.3s ease;
+      font-size: 2rem;
+      margin-top: 20px;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @include fade-in-top;
+}

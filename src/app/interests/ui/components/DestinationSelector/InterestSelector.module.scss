@@ -1,0 +1,38 @@
+@import '../../../../ui/theme/colors.module.scss';
+
+.container_destination_selector {
+	@include centered-flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	flex: 1;
+	gap: 12px;
+	width: 100%;
+
+	> .item_destination {
+		height: 32px;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+		&.selected,
+		&:hover {
+			@extend .border-white;
+			border-bottom-style: solid;
+			border-bottom-width: 2px;
+		}
+		&:hover {
+			@extend .border-white;
+			border-bottom-style: solid;
+			border-bottom-width: 1px;
+			opacity: 0.5;
+		}
+	}
+
+	@include medium-view {
+		justify-content: center;
+		flex-wrap: nowrap;
+		gap: 32px;
+	}
+
+	@include large-view {
+		justify-content: flex-start;
+	}
+}

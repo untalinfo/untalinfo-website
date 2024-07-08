@@ -1,0 +1,64 @@
+@import '../../../ui/theme/colors.module.scss';
+
+.suite-input-container {
+	box-sizing: border-box;
+	width: 100%;
+
+	> .suite-input-label-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		> .suite-input-label {
+			@extend .color-secondary-500t;
+			font-size: 13px;
+			line-height: 2rem;
+			margin-bottom: 4px;
+		}
+	}
+
+	> .suite-input-wrapper {
+		display: flex;
+		flex-direction: row;
+		padding: 1rem;
+		box-sizing: border-box;
+		align-items: center;
+		background-color: $white;
+		border-radius: 4px;
+		border-width: 1px;
+		border-style: solid;
+		height: 52px;
+		transition: all 0.3s ease-in-out;
+		@extend .border-secondary-300t;
+		@include input-states;
+
+		&.error {
+			border-color: $error;
+		}
+
+		> .suite-input {
+			
+			width: 100%;
+			border: none;
+			font-size: 1.3rem;
+			color: $primary;
+			line-height: 2rem;
+			padding: 0px;
+			outline: none;
+			background-color: $white;
+		}
+
+		> .suite-input:-webkit-autofill {
+			-webkit-background-clip: text;
+		}
+	}
+
+	> .input-error-message {
+		margin-top: 5px;
+
+		> .message {
+			color: $error;
+			font-size: 1rem;
+		}
+	}
+}

@@ -1,0 +1,149 @@
+@mixin small-view {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin medium-view {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large-view {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin x-large-view {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin x-x-large-view {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@mixin tint-value($className, $colorName, $property, $color, $through: 4, $steps: 20) {
+  @for $i from 1 through $through {
+    .#{$className}-#{$colorName}-#{$i}00t {
+      #{$property}: tint($color, 100 - ($i * $steps));
+    }
+  }
+}
+
+@mixin shade-value($className, $colorName, $property, $colorVariable) {
+  @for $i from 6 through 9 {
+    .#{$className}-#{$colorName}-#{$i}00s {
+      #{$property}: shade($colorVariable, ($i - 5) * 20);
+    }
+  }
+}
+
+@mixin key-value-color($name, $property) {
+  $colorsList: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'tertiary': $tertiary,
+    'error': $error,
+    'white': $white,
+  );
+
+@each $colorName, $colorVariable in $colorsList {
+  .#{$name}-#{$colorName} {
+    #{$property}: $colorVariable;
+  }
+
+  @if ($colorName=='secondary') or ($colorName=='neutral') {
+    @include tint-value($name, $colorName, $property, $colorVariable, 10, 10);
+  }
+
+  @else {
+    @include tint-value($name, $colorName, $property, $colorVariable);
+  }
+
+  @include shade-value($name, $colorName, $property, $colorVariable);
+}
+}
+
+@mixin centered-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin input-size {
+
+  &.fullwidth,
+  &.-fullwidth {
+    width: 100%;
+    height: 52px;
+  }
+
+  &.medium,
+  &.-medium {
+    width: 100%;
+    height: 44px;
+  }
+
+  &.small,
+  &.-small {
+    width: 100%;
+    height: 36px;
+  }
+}
+
+@mixin input-states {
+  &:active {
+    border: 1px solid $secondary;
+  }
+
+  &:focus-within {
+    border: 1px solid $primary;
+    outline: none;
+  }
+}
+
+@mixin fade-in-top {
+  &.fade_in_top {
+    -webkit-animation: fade_in_top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade_in_top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+  @-webkit-keyframes fade_in_top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade_in_top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+}
