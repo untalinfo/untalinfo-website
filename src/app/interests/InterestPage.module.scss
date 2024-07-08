@@ -1,0 +1,144 @@
+@import '../ui/theme/colors.module.scss';
+
+.container_destination_page {
+	@include centered-flex;
+	@include fade-in-top;
+	padding: 24px;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 50px;
+
+	> .container_destination_content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 24px;
+		width: 100%;
+
+		> .title_header {
+			@include centered-flex;
+			column-gap: 24px;
+			flex: 1;
+
+			> .number_title {
+				opacity: 0.5;
+				font-weight: bold;
+			}
+
+			@include medium-view {
+				align-self: flex-start;
+			}
+
+			&:first-child {
+				flex: 0 0 100%;
+			}
+		}
+
+		> .img_destination_container {
+			@include centered-flex;
+			height: 203px;
+			width: 100%;
+			flex: 1;
+
+			> .img_picture {
+				border-radius: 8px;
+				> img {
+					width: 150px;
+					height: 150px;
+					
+
+					@include medium-view {
+						width: 300px;
+						height: 300px;
+					}
+					@include large-view {
+						width: 480px;
+						height: 480px;
+					}
+				}
+			}
+
+			@include medium-view {
+				height: 384px;
+			}
+			@include large-view {
+				height: 734px;
+			}
+		}
+
+		> .container_main_section {
+			@include centered-flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 24px;
+			flex: 1;
+			width: 100%;
+			> .destination_title {
+				text-transform: uppercase;
+			}
+
+			> .destination_description {
+				text-align: center;
+
+				@include large-view {
+					text-align: start;
+				}
+			}
+
+			> .contianer_statistics {
+				@include centered-flex;
+				flex-direction: column;
+				gap: 24px;
+				> .statistic {
+					@include centered-flex;
+					flex-direction: column;
+					row-gap: 12px;
+
+					> p {
+						text-transform: uppercase;
+					}
+				}
+
+				@include medium-view {
+					flex-direction: row;
+					> .statistic {
+						width: 245px;
+					}
+				}
+
+				@include large-view {
+					> .statistic {
+						width: 210px;
+						align-items: flex-start;
+					}
+				}
+			}
+
+			@include medium-view {
+				max-width: 514px;
+			}
+
+			@include large-view {
+				align-items: flex-start;
+			}
+		}
+
+		@include large-view {
+			max-width: 1110px;
+			flex-direction: row;
+
+			> .title-header {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	@include medium-view {
+		padding: 40px;
+	}
+
+	@include large-view {
+		padding: 48px 24px;
+	}
+}
