@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import styles from "./Header.module.scss";
+import MobileSideMenu from "../MobileSideMenu/MobileSideMenu";
 
 export default function Header() {
   const [isOpeneMenuMobile, setisOpeneMenuMobile] = useState(false);
@@ -27,11 +28,11 @@ export default function Header() {
       <div onClick={handleToogleMenu} className={`${styles.hamburguer_menu}`}>
         <Image src="/assets/icon-hamburger.svg" alt="" width={20} height={20} />
       </div>
-      {/* <MobileSideMenu
+      <MobileSideMenu
         isOpen={isOpeneMenuMobile}
         toggleMenu={handleToogleMenu}
         currentPath={currentPath}
-      /> */}
+      />
       <nav className={styles.menu}>
         {MENU_ITEMS.map((item, index) => {
           return (
