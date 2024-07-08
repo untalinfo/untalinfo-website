@@ -26,13 +26,14 @@ export default function InterestsPage() {
         </header>
         <div className={`${styles.img_destination_container}`}>
           {interest && (
-          <Image
-            src={interest.image}
-            alt={`Image of ${interest?.name}`}
-            className={`${styles.img_picture}`}
-            width={487}
-            height={487}
-          />)}
+            <Image
+              src={interest.image}
+              alt={`Image of ${interest?.name}`}
+              className={`${styles.img_picture} ${styles.flip_in_ver_right}`}
+              width={487}
+              height={487}
+            />
+          )}
         </div>
         <main className={`${styles.container_main_section}`}>
           <DestinationSelector

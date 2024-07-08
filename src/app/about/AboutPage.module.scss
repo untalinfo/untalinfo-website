@@ -2,6 +2,7 @@
 
 .container_about_page {
   @include centered-flex;
+  @include fade-in-top;
   flex-direction: column;
   gap: 50px;
   padding: 24px;

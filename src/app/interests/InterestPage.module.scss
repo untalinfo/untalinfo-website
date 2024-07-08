@@ -43,6 +43,7 @@
 
 			> .img_picture {
 				border-radius: 8px;
+				@include flip_in_ver_right;
 				> img {
 					width: 150px;
 					height: 150px;
