@@ -2,7 +2,9 @@
 
 .footer_layout_container {
   @include centered-flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 25px;
   background-color: #0A0F16;
   padding: 24px;
   width: 100%;
@@ -11,6 +13,7 @@
 
   >.follow {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
     >.social_medias_container {
@@ -25,6 +28,14 @@
           opacity: 0.5;
         }
       }
+    }
+  }
+
+  @include medium-view  {
+    flex-direction: row;
+
+    >.follow {
+      align-items: flex-start;
     }
   }
 }

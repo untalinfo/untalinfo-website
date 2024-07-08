@@ -2,6 +2,7 @@
 @import './mixins.scss';
 @import './variables.module.scss';
 @import './fonts.module.scss';
+@import 'atropos/scss';
 
 :root {
   --max-width: 1100px;
@@ -125,7 +126,7 @@ body {
 
 body {
   font-size: 1.6rem;
-  color: $fontColor;
+  // color: $fontColor;
   background: $bgBody;
 }
 

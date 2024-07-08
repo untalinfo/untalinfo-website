@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./ui/theme/globals.scss";
 import "remixicon/fonts/remixicon.css";
+import "atropos/css";
 import styles from "./layout.module.scss";
 import { openSans } from "./ui/theme/fonts";
 import Image from "next/image";
@@ -39,7 +40,7 @@ export default function RootLayout({
           />
         </picture>
         <Header />
-        <main>{children}</main>
+        <main className={styles.container_main_page}>{children}</main>
         <Footer />
       </body>
     </html>
