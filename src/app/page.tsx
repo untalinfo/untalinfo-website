@@ -13,7 +13,7 @@ export default function Home() {
     router.push("/about");
   }
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
       <Suspense fallback={<div>Cargando...</div>}>
         <div className={styles.center}>
           <Image
@@ -34,6 +34,6 @@ export default function Home() {
           <ExploreButton handleClick={handleExplore} />
         </div>
       </div>
-    </main>
+    </section>
   );
 }

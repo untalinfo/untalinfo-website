@@ -1,22 +1,31 @@
+@import './ui/theme/colors.module.scss';
+
 .main {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  padding: 6rem;
-  // min-height: 100vh;
+  height: 100%;
 
   >.container_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+
 
     >.button_container {
       padding: 20px;
     }
   }
+
+    @include medium-view {
+      flex-direction: row;
+      padding: 6rem;
+      justify-content: space-evenly;
+      >.container_text {
+        gap: 20px;
+      }
+    }
 }
 
 
@@ -62,6 +71,12 @@
 
 .logo {
   position: relative;
+  max-height: 300px;
+  width: auto;
+
+  @include medium-view {
+    max-height: 500px;
+  }
 }
 
 /* Mobile */

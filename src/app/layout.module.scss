@@ -21,10 +21,4 @@
       object-fit: cover;
     }
   }
-
-  >.container_main_page {
-    @include centered-flex;
-    width: 100%;
-    height: 60%;
-  }
 }
