@@ -13,13 +13,13 @@ export default function Home() {
     router.push("/about");
   }
   return (
-    <section className={styles.main}>
+    <section className={`${styles.main} ${styles.fade_in_top}`}>
       <Suspense fallback={<div>Cargando...</div>}>
         <div className={styles.center}>
           <Image
             className={styles.logo}
             src="/assets/untalinfo.png"
-            alt="Next.js Logo"
+            alt="person foto"
             width={381}
             height={487}
             priority

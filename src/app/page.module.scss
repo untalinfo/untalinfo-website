@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  @include fade-in-top;
 
   >.container_text {
     display: flex;

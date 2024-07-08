@@ -1,0 +1,35 @@
+@import '../ui/theme/colors.module.scss';
+
+.container_about_page {
+  @include centered-flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 24px;
+  width: 100%;
+  max-width: 1110px;
+  height: 100%;
+  margin: 70px auto;
+
+  >.main_section {
+    @include centered-flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+
+    >.img {
+      border-radius: 16px;
+
+      &:hover {
+        filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 1));
+      }
+    }
+
+    @include medium-view {
+      flex-direction: row;
+      padding: 6rem;
+      justify-content: space-evenly;
+    }
+
+  }
+}

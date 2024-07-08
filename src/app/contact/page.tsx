@@ -33,7 +33,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className={styles.container_contact_page}>
+    <section className={`${styles.container_contact_page} ${styles.fade_in_top}`}>
       <h3>Conact me!</h3>
       <p>
         Tienes alguna idea o proyecto y crees que podemos trabajar escribeme
